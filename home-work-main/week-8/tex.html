@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="infor">
+      <label for="tax">tax</label>
+      <input type="number" id="tax" placeholder="ลงจำเงิน" />
+      <BR></BR>
+      <label for="tax">Sales</label>
+      <input type="number" id="tax_s" placeholder="ลงจำเงิน" />
+      <BR></BR>
+      <button id="bt">ok</button>
+      <p id="up-tax"></p>
+      <p id="up-e"></p>
+    </div>
+  </body>
+  <script>
+    const tp = (id) => document.getElementById(id);
+    tp("bt").onclick = function () {
+      const tax_c = parseFloat(tp("tax").value);
+      const tax_p = parseFloat(tp("tax_s").value);
+      const p = tax_c + tax_p;
+      const one = 10000;
+      const towe = 20000;
+      let re_1 = 0;
+      let all = 0;
+      if (p <= one) {
+        tp("up-tax").innerHTML = "ไม่เกิน10k ไม่หัก";
+        re_1 = 0;
+      }
+      if (p > one && p <= towe) {
+        tp("up-e").innerHTML = "เกิน10k หัก2%";
+        re_1 = p * 0.02;
+        all = p - re_1;
+      }
+      if (p > towe) {
+        tp("up-e").innerHTML = "เกิน20k หัก5%  ";
+        re_1 = p * 0.05;
+        all = p - re_1;
+      }
+
+      console.log("ยอดที่หัก =", re_1);
+      tp("up-e").innerHTML += "<br>ยอดที่หัก:" + re_1.toFixed(2) + "บาท";
+      tp("up-e").innerHTML += "<br>หลังหัก :" + all.toFixed(2) + "บาท";
+    };
+  </script>
+</html>

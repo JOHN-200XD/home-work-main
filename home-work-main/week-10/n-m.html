@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="n">
+    <input type="number" name="" id="m">
+    <button id="bt">ok</button>
+    <p id="up"></p>
+    <p id="tt"></p>
+</body>
+<script>
+    const tp = id => document.getElementById(id)
+    tp("bt").onclick = function () {
+        let n = parseInt(tp("n").value)
+        let m = parseInt(tp("m").value)
+        let sup = 0
+        let cont = 0
+        for (let i = n; i <= m; i++) {
+            sup += i
+            cont++
+        }
+        let vat = sup / cont
+        tp("up").innerHTML = "รวม = " + (sup)
+        tp("tt").innerHTML = "ค่าเฉลี่ย = " + (vat)
+
+        console.log(vat);
+
+    }
+</script>
+
+</html>

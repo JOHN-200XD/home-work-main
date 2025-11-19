@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0 auto;
+      }
+
+      .bk {
+        display: flex;
+        width: auto;
+        height: 60rem;
+        background: url(https://i.pinimg.com/1200x/1e/58/40/1e5840958893d2fc325c6b8d5af93ab8.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-items: center;
+
+        .top {
+          display: inline;
+          margin: 7rem auto;
+          padding: auto;
+          width: 26rem;
+          height: 40rem;
+          /* border: 1ex solid rgb(56, 56, 56); */
+          border-radius: 1rem;
+          align-items: center;
+
+          .head-1 {
+            display: inline;
+            margin-top: 1rem;
+            padding-top: 5rem;
+            height: 10rem;
+            text-align: center;
+            align-items: center;
+          }
+
+          .infor {
+            color: orchid;
+            display: block;
+            text-align: center;
+            align-items: center;
+            margin-top: 1rem;
+            margin-left: 2.8rem;
+            width: 21rem;
+            height: 1.8rem;
+            font-size: 1.2rem;
+            border-radius: 1rem;
+            background-color: rgb(255, 255, 255);
+          }
+
+          h1 {
+            margin-left: 4.2rem;
+            border-radius: 1rem;
+            width: 18rem;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            color: red;
+          }
+        }
+      }
+
+      .pg img {
+        margin: 1rem auto;
+        height: 19rem;
+        width: 23rem;
+        border-radius: 1rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bk">
+      <div class="top">
+        <div class="head-1">
+            <h1 id="put-head"></h1>
+            <div class="infor">
+              <label for="h">ความสูงหรอ:</label>
+              <input
+                type="number"
+                name=""
+                id="h"
+                placeholder="เซนติเมตร (cm)"
+              />
+              <button id="bt" type="submit">ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const tp = (id) => document.getElementById(id);
+    var x = document.getElementById("p-1");
+    var t = document.getElementById("p-2");
+
+    tp("bt").onclick = function () {
+      const high = parseFloat(tp("h").value);
+      if (high > 0 && high <= 60) {
+        tp("put-head").innerHTML = "เด็กน้อย เสีย 0บ.";
+      } else if (high >= 130 && high <= 180) {
+        tp("put-head").innerHTML = "อ้ายคาบบ เสีย 50บ.";
+      } else{
+        tp("put-head").innerHTML = "Error";
+        }  
+      
+    };
+  </script>
+</html>

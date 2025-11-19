@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="calec">input namber:</label>
+    <input type="number" name="" id="calec">
+    <button id="bt">ok</button>
+    <p id="up"></p>
+</body>
+<script>
+    const tp = id => document.getElementById(id)
+    tp('bt').onclick = function () {
+        const input = parseInt(tp('calec').value)
+        let v_cal = ""
+        let pk = ""
+        if (input > 0) {
+            for (let i = 1; i <= 12; i++) {
+                v_cal = i * input
+                pk += `${input} X ${i} = ${v_cal}<br>`
+            }
+        }
+        tp('up').innerHTML = pk
+    }
+</script>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ใหญ่มากๆ</title>
+    <style>
+        .body {
+            position: static;
+            background: url(https://i.pinimg.com/originals/9f/a7/58/9fa758d4ee6c2870c3ea08db64888d61.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .head {
+            margin: 10rem auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 3px;
+
+            .inforn {
+                display: flex;
+                text-align: center;
+                align-items: center;
+                height: 400px;
+                width: 300px;
+                border: 1px solid black;
+                border-radius: 1rem;
+                background: url(https://i.pinimg.com/736x/d2/03/83/d20383031859638c0ea9e148351f8ceb.jpg);
+                background-repeat: 200px;
+                background-position: top;
+
+                #bmi {
+                    font-size: 2rem;
+                    position: static;
+                    margin: 0rem 0.5rem;
+                    height: 80px;
+                    width: 150px;
+                    border-radius: 1rem;
+                }
+
+                h1 {
+                    text-align: center;
+                    margin: 0.3rem 0;
+                }
+
+                .in-text {
+                    display: block;
+                    gap: 1rem;
+                    margin-top: 1rem;
+
+
+                    input {
+                        font-size: 2rem;
+                        position: static;
+                        margin: 0.3rem 0rem;
+                        height: 50px;
+                        width: 188px;
+                        gap: 0rem;
+                        font: weight 3px;
+                        border-radius: 1rem;
+
+                    }
+
+                }
+
+                button {
+                    display: block;
+                    text-align: center;
+                    margin: 0.3rem 5rem;
+                    height: 4rem;
+                    width: 9rem;
+                    border-radius: 1rem;
+                    text-align: center;
+
+                    p {
+                        text-align: center;
+                        font-size: 20px;
+                    }
+                }
+
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div class="head">
+        <div class="inforn">
+            <div class="in-text">
+                <h1 style="color: aqua;">คำนวล มวลกาย</h1>
+                <input id="bmi" type="number" placeholder="  ค่าBMI" readonly></input>
+                <input id="w" type="number" placeholder=" น้ำหนัก(kg)" value="">
+                <input id="h" type="number" placeholder=" ส่วนสูง(Cm)" value="">
+                <button class="bt" onclick="submit()">
+                    <p>Click</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function submit() {
+        // รับค่ามา
+        let w_info = parseFloat(document.getElementById("w").value)
+        let h_info = parseFloat(document.getElementById("h").value)
+        // ห้ามใส่ 0
+        if (w_info <= 0 || h_info <= 0) {
+            alert("อะะห้ามติดลบนะจะ")
+            return;
+        }
+        // การทำงาน
+        const height = h_info / 100
+        const calc = w_info / (height * height)
+
+        console.log(calc);
+        document.getElementById("bmi").value = calc.toFixed(2);
+    }
+
+</script>

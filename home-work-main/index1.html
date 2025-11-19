@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label>หนังสือ</label>
+        <input type="number" id="uned">
+    </div>
+    <div>
+        <label>ราคา</label>
+        <input type="number" id="cons">
+    </div>
+    <label id="out_1"></label>
+    <button onclick="bt()">คำนวณ</button>
+
+    <script>
+        const out = document.getElementById("out_1");
+        const n = document.getElementById("uned");
+        const m = document.getElementById("cons");
+
+        function calcPrice(book, price) {
+            let discount = 0;
+            if (book > 3 && price > 500) {
+                discount = price * 0.10;
+            }
+            return price - discount;
+        }
+        function bt() {
+            let book = parseInt(n.value);
+            let price = parseFloat(m.value);
+            if (isNaN(book) || isNaN(price)) {
+                out.innerHTML = "กรุณากรอกข้อมูลให้ครบ";
+                return;
+            }
+            let finalPrice = calcPrice(book, price);
+            out.innerHTML = "ราคาที่ต้องจ่าย: " + finalPrice.toFixed(2) + " บาท";
+        }
+    </script>
+
+</body>
+
+</html>

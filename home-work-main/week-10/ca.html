@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" name="" id="n">
+
+    <button id="bt">ok</button>
+    <p id="up"></p>
+    <p id="tt"></p>
+</body>
+<script>
+    const tp = id => document.getElementById(id)
+    tp("bt").onclick = function () {
+        let n = parseInt(tp("n").value)
+        let sup = 0
+        let cont = 0
+        for (let i = 1; i <= n; i++) {
+            if (n % 2 === 0) {
+                sup += n
+
+            } else {
+                cont += n
+            }
+        }
+        tp("up").innerHTML = "ลงตัว = " + (sup)
+        tp("tt").innerHTML = "ไม่ลงตัว = " + (cont)
+
+        console.log(sup);
+
+    }
+</script>
+
+</html>

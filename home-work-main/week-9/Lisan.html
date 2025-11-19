@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<<<<<<< HEAD
+  <body>
+    <label for="name">inupt text;</label>
+    <input type="text" name="" id="name" />
+    <button id="bt">ok</button>
+    <p id="up-text"></p>
+  </body>
+  <script>
+    const tp = (id) => document.getElementById(id);
+    tp("bt").onclick = function () {
+      let num = tp("name").value;
+      let i = 0;
+      let man = "";
+      // console.log(man);
+
+      do {
+        man += num[i] + "!<br>";
+        i++;
+      } while (i < num.length);
+      // while (i < num.length) {
+      //   console.log(num[i] + "!");
+      //   man += num[i] + "!<br>";
+      //   i++;
+      // }
+      tp("up-text").innerHTML = man;
+    };
+  </script>
+</html>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <label for="name">inupt text;</label>
+  <input type="text" name="" id="name" />
+  <button id="bt">ok</button>
+  <p id="up-text"></p>
+</body>
+<script>
+  const tp = (id) => document.getElementById(id);
+  tp("bt").onclick = function () {
+    const num = tp("name").value;
+    let i = 0;
+    let man = "";
+    do {
+      man += num[i] + "!<br>";
+      i++;
+    } while (i < num.length);
+    // while (i < num.length) {
+    //     console.log(num[i] + "!");
+    //     man += num[i] + "!<br>"
+    //     i++
+
+    // }
+    tp("up-text").innerHTML = man;
+
+  };
+</script>
+
+</html>
+>>>>>>> 251a61f603788bb803de8a7a5716eb949130147a

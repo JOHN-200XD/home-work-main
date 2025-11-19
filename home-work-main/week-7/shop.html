@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .conteraner {
+            margin: 7.5rem auto;
+            text-align: center;
+            align-items: center;
+            padding: 3rem;
+            border: 3px solid black;
+            border-radius: 1rem;
+            background-color: blueviolet;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            max-width: 100%;
+            width: 400px;
+            height: 450px;
+
+            .nap {
+                padding: 3rem;
+                align-items: center;
+                padding: rem;
+                font-size: 1.5rem;
+                font-family: sans-serif;
+            }
+
+            .title {
+                display: block;
+                align-items: center;
+                margin: 0;
+            }
+
+            .put {
+                display: inline;
+                margin: 2rem auto;
+                padding: 1rem;
+                font-size: 2rem;
+            }
+
+        }
+
+        button {
+            width: 8rem;
+            height: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conteraner-wap">
+        <div class="conteraner">
+            <!--ตัว ปรับค่า-->
+            <div class="rap">
+                <div class="nap">
+                    <div class="title">
+                        <h3 style="color: aqua;">ขายน้ำ</h3>
+                        <label for="water">จำนวน: </label>
+                        <input type="number" name="" id="water" value="" placeholder="ขวด">
+                    </div class="title">
+
+                </div>
+            </div>
+
+            <div>
+                <button onclick="bt()">ok</button>
+            </div>
+            <!-- out put -->
+            <div class="put">
+                <div><strong>จำนวน:</strong><strong id="out-u"></strong></div>
+                <div><strong>โหล:</strong><strong id="out-y"></strong></div>
+                <div><strong>ราคา:</strong><strong id="out-water"></strong></div>
+                <!-- <div><strong>ราคา:</strong><strong id="out-led"></strong> </div> -->
+                <div><strong>Vat %:</strong> <strong id="out-te"></strong></div>
+                <div>
+                    <stron>ยอดรวม:</stron><strong id="out-all"></strong><br>
+                    <p id="out-ho"></p><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    //ตัวนี้คือ tp มันคือ id และ document.getElementById(id) 
+    //ตรงวงเล็บให้ใส่ id เพื่อระบุว่ามันคือ id 
+    //ตัวอย่างในการใช้จริง ## tp('out-water') 
+    const tp = id => document.getElementById(id)
+
+    function bt() {
+        // สูตรคำนวล 
+        let remil = parseInt(tp('water').value)
+        // ห้าม -
+        if (remil <= 0) {
+            alert(";v")
+            return;
+        }
+        // การคำนวล
+        const water_man = remil * 10
+        const calce = (remil * 0.07)
+        const all = calce + water_man
+        let m = remil%12
+        if (remil % 12 >= 0) {
+            let a = 100;
+            let b = Math.floor(remil / 12)
+            tp('out-ho').innerHTML = '🎉 โปรโมชั่น!' + Math.round(a)
+            tp('out-y').innerHTML = b
+        } 
+        tp('out-u').innerHTML = m
+        //เช็คการทำงาน
+        console.log(all);
+        //ทำการส่ง ผลที่คำนวลขึ้นจอ 
+        tp('out-water').innerHTML = water_man
+        if (calce) {
+            tp('out-te').innerHTML = (calce.toFixed(2))
+        }
+        tp('out-all').innerHTML = Math.round(all)
+
+    }
+</script>
+
+
+
+</html>

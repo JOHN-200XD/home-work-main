@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="" id="name">
+    </div>
+    <div class="">
+        <label for="" id="rep"></label>
+    </div>
+    <button onclick="mani()">ok</button>
+    <button onclick="mani_1()">ok_(2)</button>
+    <hr>
+    <div>
+        <label for="">in</label>
+        <input type="number" name="" id="basd">
+    </div>
+    <div>
+        <label for="">in heigh</label>
+        <input type="number" name="" id="heigh">
+    </div>
+    <div>
+        <label for="" id="out1"></label>
+    </div>
+    <button onclick="mani_2()">put</button>
+    <button onclick="mani_3()">put_3</button>
+    <button onclick="mani_4()">put_4</button>
+</body>
+<script>
+    const out = document.getElementById("rep")
+    const up = document.getElementById("out1")
+    const n = document.getElementById("name")
+    const b = document.getElementById("basd")
+    const e = document.getElementById("heigh")
+    function mani() {
+        show()
+    }
+    function show() {
+        out.innerHTML += n
+    }
+    function show_2(name) {
+        out.innerHTML = "Hello, " + name
+    }
+    function mani_1() {
+        let name = n.value
+        show_2(n)
+    }
+    function mani_2() {
+        let basd = parseFloat(b.value)
+        let heigh = parseFloat(e.value)
+        add(basd, heigh)
+    }
+    function add(basd, heigh) {
+        let area = 0.5 * basd * heigh
+        up.innerHTML = "area = " + area
+    }
+    function mani_3() {
+        console.log(mani_3);
+        let a = count_y()
+        up.innerHTML = "area =" + a
+    }
+    function count_y() {
+        let basd = parseFloat(b.value)
+        let heigh = parseFloat(e.value)
+        let area = 0.5 * basd * heigh
+        return area
+    }
+    function mani_4() {
+        let basd = parseFloat(b.value)
+        let heigh = parseFloat(e.value)
+        up.innerHTML = "area = " + add(basd, heigh)
+    }
+    function add(basd, head) {
+        //
+        return 0.5 * basd * heigh
+    }
+</script>
+
+</html>

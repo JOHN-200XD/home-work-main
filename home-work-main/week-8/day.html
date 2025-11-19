@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Day-num</label>
+    <input type="number" name="" id="pp" />
+    <button id="bt">ok</button>
+    <div><strong id="up-e"></strong></div>
+  </body>
+  <script>
+    const tp = (id) => document.getElementById(id);
+    tp("bt").onclick = function () {
+      const day_num = parseInt(tp("pp").value);
+      let day_name = "";
+      switch (day_num) {
+        case 1:
+          day_name = "Monday";
+          break;
+        case 2:
+          day_name = "Tuesday";
+          break;
+        case 3:
+          day_name = "Wednesday";
+          break;
+        case 4:
+          day_name = "Thursday";
+          break;
+        case 5:
+          day_name = "Friday";
+          break;
+        case 6:
+          day_name = "Saturday";
+          break;
+        case 7:
+          day_name = "Sunday";
+          break;
+        case day_name < 0:
+          day_name = "ไม่ต่ำกว่า 0";
+          break;
+        default:
+          day_name = "Error";
+      }
+      tp("up-e").innerHTML = day_name + "!<br>";
+    };
+  </script>
+</html>

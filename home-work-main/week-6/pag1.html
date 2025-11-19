@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #name {
+        display: block;
+        align-items: center;
+        text-align: center;
+        p {
+          margin: 1rem auto;
+          width: 15rem;
+          border: 0;
+          border-radius: 1rem;
+        }
+        button {
+          margin-top: 2rem;
+          height: 130px;
+          width: 250px;
+          border-radius: 1rem;
+        }
+        :hover {
+          background-color: aquamarine;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="name">
+      <p>Name: Kasemsak Ratchanipan</p>
+      <p>age: 22</p>
+      <p>Year: 1</p>
+      <p>birthday: 6 August 2003</p>
+      <p>Email: mr.john200xd@gmail.com</p>
+      <p>Tel: 062-xxxx-xxx</p>
+      <button
+        onclick="gotolink()"
+        value="http://127.0.0.1:5500/week-6/index.html"
+      >
+        แปล
+      </button>
+    </div>
+
+    <script>
+      function gotolink() {
+        window.location = "http://127.0.0.1:5500/week-6/index.html";
+      }
+    </script>
+  </body>
+</html>

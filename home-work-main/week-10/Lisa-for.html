@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="in">input</label>
+    <input type="text" name="" id="in">
+    <button id="bt">ok</button>
+    <p id="up"></p>
+</body>
+<script>
+    const tp = id => document.getElementById(id)
+    tp("bt").onclick = function () {
+        const num = tp("in").value
+        let in_t = ""
+        for (let i = 0; i < num.length; i++) {
+            in_t += num[i] + "<br>"
+        }
+        console.log(in_t);
+        tp("up").innerHTML = in_t
+
+
+    }
+</script>
+
+</html>
